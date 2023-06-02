@@ -1,0 +1,59 @@
+POST http://127.0.0.1:3333/annotations
+content-type: application/json
+
+{
+    
+    "notes": "Aqui é a anotação",
+    "priority": true
+}
+
+###
+
+GET http://localhost:3333/annotations
+
+###
+
+POST http://localhost:3333/annotations
+content-type: application/json
+
+{
+    "title": "Testando o título",
+    "notes": "Teste da anotação",
+    "priority": true
+}
+
+###
+
+DELETE http://localhost:3333/annotations/64481d3ac832c368f932e72d
+content-type: application/json
+
+
+### filtra a prioridade false ou true
+
+GET http://localhost:3333/priorities?priority=true
+
+### muda a prioridade de true para false e vice versa
+http://localhost:3333/priorities/643599a972c8ed8975ba4b17?priority=false
+
+
+### 
+GET http://localhost:3333/users
+
+### 
+GET http://localhost:3333/imoveis
+
+###
+POST http://127.0.0.1:3333/imoveis
+content-type: application/json
+
+{
+    "tipo": "Testando o tipo",
+    "endereco": "Rua das casas, 171",
+    "cidade": "Capivari",
+    "uf": "SP",
+    "valor": 150000,
+    "descricao": "Casa para alugar"
+}
+
+###
+GET http://localhost:3333/imoveis
